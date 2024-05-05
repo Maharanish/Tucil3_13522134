@@ -4,7 +4,6 @@ import java.util.*;
 import javax.print.PrintException;
 
 public class GBFS extends Solver {
-    
     public GBFS(Set<String> dictionary) {
         super(dictionary);
     }
@@ -28,7 +27,7 @@ public class GBFS extends Solver {
         // System.out.println();
 
         //Algoritma
-        PriorityQueue<Node> gbfsqueue = new PriorityQueue<>(Comparator.comparingInt(a -> getMinimumDistance(a.word, keyWord)));
+        PriorityQueue<Node> gbfsqueue = new PriorityQueue<>(Comparator.comparingInt(a -> getMinimumDistance(a.word, keyWord)+ (int) a.word.charAt(0)));
         gbfsqueue.add(new Node(startWord, 1, null));
 
         Set<String> visitednode = new HashSet<>();
@@ -36,6 +35,7 @@ public class GBFS extends Solver {
 
         while (!gbfsqueue.isEmpty()) {
             Node current = gbfsqueue.poll();
+            gbfsqueue.clear();
             if (current.word.equals(keyWord)) {
                 return storePath(current);
             }

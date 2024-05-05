@@ -37,13 +37,13 @@ public class GBFS extends Solver {
 
         //Algoritma
         PriorityQueue<Node> gbfsqueue = new PriorityQueue<>(Comparator.comparingInt(a -> getMinimumDistance(a.word, keyWord)));
-        gbfsqueue.add(new Node(startWord, 1, null));
-
+        gbfsqueue.add(new Node(startWord, 0, null));
         Set<String> visitednode = new HashSet<>();
         visitednode.add(startWord);
 
         while (!gbfsqueue.isEmpty()) {
             Node current = gbfsqueue.poll();
+            gbfsqueue.clear();
             if (current.word.equals(keyWord)) {
                 return storePath(current);
             }
@@ -56,6 +56,8 @@ public class GBFS extends Solver {
                         gbfsqueue.add(new Node(word, current.level + 1, current));
                     }
                 }
+                // System.out.println("iniiiiii dict");
+                // gbfsqueue.stream().forEach(node -> System.out.println(node.word));
             }catch(Exception e){
                 System.out.println("Error: " + e.getMessage());
             }
