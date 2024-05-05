@@ -58,11 +58,11 @@ public class Main {
 
             // Input kata awal
             System.out.println("Please enter your start word: ");
-            String startWord = scanner.nextLine().toLowerCase();
+            String startWord = scanner.nextLine().toLowerCase().trim();
 
             // Input kata akhir
             System.out.println("Please enter your end word: ");
-            String endWord = scanner.nextLine().toLowerCase();
+            String endWord = scanner.nextLine().toLowerCase().trim();
             
 
             try {
