@@ -63,9 +63,7 @@ public class Main {
             // Input kata akhir
             System.out.println("Please enter your end word: ");
             String endWord = scanner.nextLine().toLowerCase();
-
             
-            scanner.close();
 
             try {
                 Set<String> dictionary = loadDict("src/main/java/CLI/text/dictionary.txt");
@@ -138,11 +136,14 @@ public class Main {
                 }
 
                 if (save == 1) {
-                    System.out.print("Enter file name: (Example : solution1)");
+                    System.out.println("Enter file name: (Example : solution1)");
                     String fileName = scanner.nextLine();
+                    System.out.println("Enter file path: (Example : C:/Users/Shabrina Maharani/Documents/4th sem/STIMA/Tucil3_13522134/test/)");
+                    String filePath = scanner.nextLine();
+                    scanner.close();
                     if (fileName != null && !fileName.isEmpty() && !solution.isEmpty()) {
                         try {
-                            FileWriter writer = new FileWriter("C:/Users/Shabrina Maharani/Documents/Tucil3_13522134 - Copy/test/" + fileName + ".txt");
+                            FileWriter writer = new FileWriter(filePath + fileName + ".txt");
 
                             writer.write("Start Word : " + startWord + "\n");
                             writer.write("End Word : " + endWord + "\n"); 

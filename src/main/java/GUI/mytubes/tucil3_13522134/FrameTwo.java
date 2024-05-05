@@ -324,10 +324,12 @@ public class FrameTwo extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         String fileName = JOptionPane.showInputDialog(this, "Enter file name: (Example : solution1)");
+        String filePath = JOptionPane.showInputDialog(this, "Enter file path: (Example : C:/Users/Shabrina Maharani/Documents/4th sem/STIMA/Tucil3_13522134/test/)");
+
     
         if (fileName != null && !fileName.isEmpty() && !jTextPane1.getText().isEmpty()) {
             try {
-                FileWriter writer = new FileWriter("C:/Users/Shabrina Maharani/Documents/Tucil3_13522134 - Copy/test/" + fileName + ".txt");
+                FileWriter writer = new FileWriter(filePath + fileName + ".txt");
 
                 writer.write("Start Word : " + jTextField2.getText() + "\n");
                 writer.write("End Word : " + jTextField1.getText() + "\n");
