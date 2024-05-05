@@ -27,7 +27,7 @@ public class GBFS extends Solver {
         // System.out.println();
 
         //Algoritma
-        PriorityQueue<Node> gbfsqueue = new PriorityQueue<>(Comparator.comparingInt(a -> getMinimumDistance(a.word, keyWord)+ (int) a.word.charAt(0)));
+        PriorityQueue<Node> gbfsqueue = new PriorityQueue<>(Comparator.comparingInt(a -> getMinimumDistance(a.word, keyWord)));
         gbfsqueue.add(new Node(startWord, 1, null));
 
         Set<String> visitednode = new HashSet<>();
