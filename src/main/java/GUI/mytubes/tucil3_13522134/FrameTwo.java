@@ -256,8 +256,8 @@ public class FrameTwo extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {}
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        String endWord = jTextField1.getText().toLowerCase();
-        String startWord = jTextField2.getText().toLowerCase();
+        String endWord = jTextField1.getText().toLowerCase().trim();
+        String startWord = jTextField2.getText().toLowerCase().trim();
         
         String choice = (String) jComboBox1.getSelectedItem();
 
