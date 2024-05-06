@@ -341,15 +341,6 @@ public class FrameTwo extends javax.swing.JFrame {
         }
     }
 
-    private void resetGUI() {
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jComboBox1.setSelectedIndex(0);
-        jTextPane1.setText("");
-        jTextArea1.setText("");
-        jTextArea2.setText("");
-        jTextArea3.setText("");
-    }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 
