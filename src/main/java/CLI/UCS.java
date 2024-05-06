@@ -14,7 +14,7 @@ import javax.print.PrintException;
 public class UCS extends Solver {
     
 
-    public UCS(Set<String> dictionary) {
+    public UCS(List<String> dictionary) {
         super(dictionary);
     }
 
@@ -40,7 +40,7 @@ public class UCS extends Solver {
         //System.out.println("test1");
         //Algoritma
         PriorityQueue<Node> ucsqueue = new PriorityQueue<>(Comparator.comparingInt(a -> a.level));
-        ucsqueue.add(new Node(startWord, 1, null));
+        ucsqueue.add(new Node(startWord, 0, null));
 
         Set<String> visitednode = new HashSet<>();
         visitednode.add(startWord);
@@ -49,13 +49,13 @@ public class UCS extends Solver {
 
         while (!ucsqueue.isEmpty()) {
             Node current = ucsqueue.poll();
+            nodecount++;
             if (current.word.equals(keyWord)) {
                 return storePath(current);
             }
 
             for (String word : dictionary) {
                 if (!visitednode.contains(word) && isOnediff(current.word, word)) {
-                    nodecount++;
                     visitednode.add(word);
                     ucsqueue.add(new Node(word, current.level + 1, current));
                 }

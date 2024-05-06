@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package GUI.mytubes.tucil3_13522134;
+package GUI;
 
 /**
  *
@@ -13,6 +13,7 @@ import java.util.*;
 import java.io.*;
 import java.awt.Font;
 import javax.swing.JOptionPane;
+import CLI.*;
 
 
 public class FrameTwo extends javax.swing.JFrame {
@@ -271,7 +272,7 @@ public class FrameTwo extends javax.swing.JFrame {
         String choice = (String) jComboBox1.getSelectedItem();
 
         try {
-            Set<String> dictionary = loadDict("src/main/java/CLI/text/dictionary.txt");
+            List<String> dictionary = loadDict("src/main/java/CLI/text/dictionary.txt");
             List<String> solution= new ArrayList<>();;
             UCS ucsSolver = new UCS(dictionary);
             GBFS gbfsSolver = new GBFS(dictionary);
@@ -367,8 +368,8 @@ public class FrameTwo extends javax.swing.JFrame {
     }
     
 
-    public static Set<String> loadDict(String filePath) throws FileNotFoundException {
-        Set<String> dictionary = new HashSet<>(); //Penggunaan Set agar kata pada dictionary tidak redundant
+    public static List<String> loadDict(String filePath) throws FileNotFoundException {
+        List<String> dictionary = new ArrayList<>(); //Penggunaan Set agar kata pada dictionary tidak redundant
         try (Scanner scanner = new Scanner(new File(filePath))) {
             while (scanner.hasNextLine()) {
                 dictionary.add(scanner.nextLine().toLowerCase());

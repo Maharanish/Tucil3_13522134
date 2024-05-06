@@ -14,8 +14,8 @@ import java.io.*;
 
 public class Main {
 
-    public static Set<String> loadDict(String filePath) throws FileNotFoundException {
-        Set<String> dictionary = new HashSet<>(); //Penggunaan Set agar kata pada dictionary tidak redundant
+    public static List<String> loadDict(String filePath) throws FileNotFoundException {
+        List<String> dictionary = new ArrayList<>(); //Penggunaan List agar kata pada dictionary tidak redundant
         try (Scanner scanner = new Scanner(new File(filePath))) {
             while (scanner.hasNextLine()) {
                 dictionary.add(scanner.nextLine().toLowerCase());
@@ -65,7 +65,7 @@ public class Main {
             
         int currentMemory = (int) (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1024;
         try {
-            Set<String> dictionary = loadDict("src/main/java/CLI/text/dictionary.txt");
+            List<String> dictionary = loadDict("src/main/java/CLI/text/dictionary.txt");
             List<String> solution= new ArrayList<>();;
             UCS ucsSolver = new UCS(dictionary);
             GBFS gbfsSolver = new GBFS(dictionary);

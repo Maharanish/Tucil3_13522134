@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package GUI.mytubes.tucil3_13522134;
+package GUI;
 
 /**
  *
@@ -24,6 +24,8 @@ public class FrameOne extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,8 +95,28 @@ public class FrameOne extends javax.swing.JFrame {
         jLabel4.setText("Hope you enjoy it!");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 590, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Castellar", 0, 12)); // NOI18N
+        jLabel6.setText("Say goodbye to word ladder woes! Our program is here to swiftly find your solution. No more puzzling over steps, let's climb that ladder together!");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(255, 232, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1170, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 1170, 40));
+
         jLabel5.setIcon(new javax.swing.ImageIcon(System.getProperty("user.dir")+"\\src\\main\\java\\GUI\\images\\pastel-mountain-range-aesthetic-mac-d2scpr7wfxa3fuda.jpg"));
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -4, 1290, 700));
+
 
         setSize(new java.awt.Dimension(1300, 702));
         setLocationRelativeTo(null);
@@ -127,5 +149,8 @@ public class FrameOne extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel6;
+
     
 }

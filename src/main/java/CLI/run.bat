@@ -1,0 +1,1 @@
+javac Astar.java GBFS.java Main.java Node.java Solver.java UCS.java && java CLI.Main

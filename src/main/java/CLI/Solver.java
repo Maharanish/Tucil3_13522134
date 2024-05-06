@@ -12,9 +12,9 @@ import java.util.*;
 
 public abstract class Solver {
     protected static int nodecount;
-    protected Set<String> dictionary;
+    protected List<String> dictionary;
 
-    public Solver(Set<String> dictionary) {
+    public Solver(List<String> dictionary) {
         this.dictionary = dictionary;
     }
 

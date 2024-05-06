@@ -12,7 +12,7 @@ import java.util.*;
 import javax.print.PrintException;
 
 public class Astar extends Solver {
-    public Astar(Set<String> dictionary) {
+    public Astar(List<String> dictionary) {
         super(dictionary);
     }
 
@@ -36,13 +36,14 @@ public class Astar extends Solver {
 
         //Algoritma
         PriorityQueue<Node> astarqueue = new PriorityQueue<>(Comparator.comparingInt(a -> a.level + getMinimumDistance(a.word, keyWord)));
-        astarqueue.add(new Node(startWord, 1, null));
+        astarqueue.add(new Node(startWord, 0, null));
 
         Set<String> visitednode = new HashSet<>();
         visitednode.add(startWord);
 
         while (!astarqueue.isEmpty()) {
             Node current = astarqueue.poll();
+            nodecount++;
             if (current.word.equals(keyWord)) {
                 return storePath(current);
             }
@@ -50,7 +51,6 @@ public class Astar extends Solver {
             for (String word : dictionary) {
                 try{
                     if (!visitednode.contains(word) && isOnediff(current.word, word)) {
-                        nodecount++;
                         visitednode.add(word);
                         astarqueue.add(new Node(word, current.level + 1, current));
                     }

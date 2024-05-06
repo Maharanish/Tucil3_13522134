@@ -8,13 +8,13 @@ package CLI;
  *
  * @author Shabrina Maharani
  */
+
 import java.util.*;
 import javax.print.PrintException;
 
 public class GBFS extends Solver {
-    
-    public GBFS(Set<String> dictionary) {
-        super(dictionary);
+    public GBFS(List<String> dictionary) {
+        super(dictionary); 
     }
 
     @Override
@@ -29,20 +29,24 @@ public class GBFS extends Solver {
             throw new PrintException("Start word and end word are different lengths!");
         }
 
-        System.out.println();
-        System.out.println("Finding Nemo? NO ");
-        System.out.println("Finding your solution? YES ");
-        System.out.println("Please wait! ");
-        System.out.println();
+        // System.out.println();
+        // System.out.println("Finding Nemo? NO ");
+        // System.out.println("Finding your solution? YES ");
+        // System.out.println("Please wait! ");
+        // System.out.println();
 
         //Algoritma
         PriorityQueue<Node> gbfsqueue = new PriorityQueue<>(Comparator.comparingInt(a -> getMinimumDistance(a.word, keyWord)));
         gbfsqueue.add(new Node(startWord, 0, null));
+
         Set<String> visitednode = new HashSet<>();
         visitednode.add(startWord);
 
         while (!gbfsqueue.isEmpty()) {
             Node current = gbfsqueue.poll();
+            //System.out.println(current.word);
+            visitednode.add(current.word);
+            nodecount++;
             gbfsqueue.clear();
             if (current.word.equals(keyWord)) {
                 return storePath(current);
@@ -51,13 +55,13 @@ public class GBFS extends Solver {
             try{
                 for (String word : dictionary) {
                     if (!visitednode.contains(word) && isOnediff(current.word, word)) {
-                        nodecount++;
-                        visitednode.add(word);
                         gbfsqueue.add(new Node(word, current.level + 1, current));
                     }
                 }
-                // System.out.println("iniiiiii dict");
-                // gbfsqueue.stream().forEach(node -> System.out.println(node.word));
+                // System.out.println("inidictionary");
+                // for (Node node : gbfsqueue) {
+                //     System.out.println(node.word);
+                // }
             }catch(Exception e){
                 System.out.println("Error: " + e.getMessage());
             }
