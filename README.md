@@ -40,8 +40,9 @@ This Word Ladder Solver by Shabrina Maharani leverages advanced algorithms to tr
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+![Example screenshot](./img/frameone.png)
+![Example screenshot](./img/frametwo.png)
+
 
 
 ## Local Environment Setup
