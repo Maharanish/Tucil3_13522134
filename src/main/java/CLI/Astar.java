@@ -43,6 +43,7 @@ public class Astar extends Solver {
 
         while (!astarqueue.isEmpty()) {
             Node current = astarqueue.poll();
+            visitednode.add(current.word);
             nodecount++;
             if (current.word.equals(keyWord)) {
                 return storePath(current);
@@ -51,7 +52,6 @@ public class Astar extends Solver {
             for (String word : dictionary) {
                 try{
                     if (!visitednode.contains(word) && isOnediff(current.word, word)) {
-                        visitednode.add(word);
                         astarqueue.add(new Node(word, current.level + 1, current));
                     }
                 }catch(Exception e){

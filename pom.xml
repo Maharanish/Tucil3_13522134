@@ -16,6 +16,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
-        <exec.mainClass>com.mytubes.tucil3_13522134.Tucil3_13522134</exec.mainClass>
+        <exec.mainClass>GUI.Tucil3_13522134</exec.mainClass>
     </properties>
 </project>

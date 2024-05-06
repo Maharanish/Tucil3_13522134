@@ -1,0 +1,8 @@
+Start Word : BAG
+End Word : FAN
+Solution: 
+bag
+ban
+fan
+Execution Time : 21.0 miliseconds
+Visited Nodes : 4 Nodes

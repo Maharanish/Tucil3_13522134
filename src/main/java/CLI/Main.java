@@ -15,7 +15,7 @@ import java.io.*;
 public class Main {
 
     public static List<String> loadDict(String filePath) throws FileNotFoundException {
-        List<String> dictionary = new ArrayList<>(); //Penggunaan List agar kata pada dictionary tidak redundant
+        List<String> dictionary = new ArrayList<>(); 
         try (Scanner scanner = new Scanner(new File(filePath))) {
             while (scanner.hasNextLine()) {
                 dictionary.add(scanner.nextLine().toLowerCase());
@@ -27,15 +27,16 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println("Welcome WordLadder Solver by Shabrina Maharani!");
-        System.out.println();
+        System.out.println("======================================================");
+        System.out.println("||Welcome to WordLadder Solver by Shabrina Maharani!||");
+        System.out.println("======================================================");
         Scanner scanner = new Scanner(System.in);
-
          // Input pilihan algoritma
-        System.out.println("Choose the algorithm! ");
+        System.out.println("Choose the algorithm!");
         System.out.println("1. Uniform Cost Search");
         System.out.println("2. Greedy Best-First Search");
         System.out.println("3. A*");
+        
 
         int choice = 0;
         boolean isValidChoice = false;
@@ -62,10 +63,11 @@ public class Main {
         // Input kata akhir
         System.out.println("Please enter your end word: ");
         String endWord = scanner.nextLine().toLowerCase().trim();
+        System.out.println("===================================================");
             
         int currentMemory = (int) (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1024;
         try {
-            List<String> dictionary = loadDict("src/main/java/CLI/text/dictionary.txt");
+            List<String> dictionary = loadDict("CLI/text/dictionary.txt");
             List<String> solution= new ArrayList<>();;
             UCS ucsSolver = new UCS(dictionary);
             GBFS gbfsSolver = new GBFS(dictionary);
@@ -93,6 +95,7 @@ public class Main {
             int endMemory = (int) (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1024;
             int memoryUsage = endMemory-currentMemory;
             String timeexe = new String();
+            System.out.println("===================================================");
             if (!solution.isEmpty()) {
                 System.out.println("Start Word : " + startWord);
                 System.out.println("End Word : " + endWord);
@@ -119,6 +122,7 @@ public class Main {
                 System.out.println("No path found from " + startWord + " to " + endWord);
             }
 
+            System.out.println("===================================================");
             // Simpan file
             System.out.println("Save file? ");
             System.out.println("1. Yes");

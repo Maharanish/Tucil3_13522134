@@ -49,6 +49,7 @@ public class UCS extends Solver {
 
         while (!ucsqueue.isEmpty()) {
             Node current = ucsqueue.poll();
+            visitednode.add(current.word);
             nodecount++;
             if (current.word.equals(keyWord)) {
                 return storePath(current);
@@ -56,7 +57,7 @@ public class UCS extends Solver {
 
             for (String word : dictionary) {
                 if (!visitednode.contains(word) && isOnediff(current.word, word)) {
-                    visitednode.add(word);
+                    //visitednode.add(word);
                     ucsqueue.add(new Node(word, current.level + 1, current));
                 }
             }

@@ -266,6 +266,7 @@ public class FrameTwo extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {}
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        
         String endWord = jTextField1.getText().toLowerCase().trim();
         String startWord = jTextField2.getText().toLowerCase().trim();
         
@@ -331,9 +332,20 @@ public class FrameTwo extends javax.swing.JFrame {
             }
             int memoryUsage =  endMemory - currentMemory;
             jTextArea3.setText("Memory Usage : " + memoryUsage + " kb");
+            
         } catch (Exception e) {
             displayErrorDialog("Error: " + e.getMessage());
         }
+    }
+
+    private void resetGUI() {
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jComboBox1.setSelectedIndex(0);
+        jTextPane1.setText("");
+        jTextArea1.setText("");
+        jTextArea2.setText("");
+        jTextArea3.setText("");
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {

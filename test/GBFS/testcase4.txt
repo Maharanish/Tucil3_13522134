@@ -1,0 +1,10 @@
+Start Word : SOLVER
+End Word : FILTER
+Solution: 
+solver
+silver
+siller
+filler
+filter
+Execution Time : 27.0 miliseconds
+Visited Nodes : 5 Nodes
