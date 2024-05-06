@@ -11,7 +11,7 @@ package CLI;
 import java.util.*;
 
 public abstract class Solver {
-    protected static int nodecount;
+    public static int nodecount;
     protected List<String> dictionary;
 
     public Solver(List<String> dictionary) {

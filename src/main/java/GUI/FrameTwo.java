@@ -266,7 +266,7 @@ public class FrameTwo extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {}
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        
+
         String endWord = jTextField1.getText().toLowerCase().trim();
         String startWord = jTextField2.getText().toLowerCase().trim();
         
@@ -278,6 +278,9 @@ public class FrameTwo extends javax.swing.JFrame {
             UCS ucsSolver = new UCS(dictionary);
             GBFS gbfsSolver = new GBFS(dictionary);
             Astar astarSolver = new Astar(dictionary);
+            ucsSolver.nodecount = 0;
+            gbfsSolver.nodecount = 0;
+            astarSolver.nodecount = 0;
             double startTime =0;
             double endTime =0;
 
@@ -349,6 +352,7 @@ public class FrameTwo extends javax.swing.JFrame {
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+
         String fileName = JOptionPane.showInputDialog(this, "Enter file name: (Example : solution1)");
         String filePath = JOptionPane.showInputDialog(this, "Enter file path: (Example : C:/Users/Shabrina Maharani/Documents/4th sem/STIMA/Tucil3_13522134/test/)");
 
